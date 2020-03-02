@@ -1,0 +1,53 @@
+<div class="limiter animated fadeInLeft">
+  <div class="container-login100">
+      <div class="wrap-login100 p-t-50 p-b-90">
+          <form (ngSubmit)="login( f )"
+              #f = "ngForm"
+              class="login100-form validate-form flex-sb flex-w">
+
+              <span class="login100-form-title p-b-51">
+                  Login
+              </span>
+              <span *ngIf="f.submitted && f.controls['login'].errors"                    
+                  class="text-danger">
+                  El login es obligatorio
+              </span>
+              <div class="wrap-input100 m-b-16">
+                  <input class="input100" 
+                         type="text" 
+                         name="login" 
+                         [(ngModel)]="usuario.usunombre"                           
+                         minlength="2"
+                         required
+                         placeholder="Usuario">
+
+                  <span class="focus-input100"></span>
+              </div>
+              <span *ngIf="f.submitted && f.controls['password'].errors"                    
+                  class="text-danger">
+                  La contraseña es obligatoria (Mínimo 4 caracteres.)
+              </span>
+              <div class="wrap-input100 m-b-16" >
+                  <input class="input100"
+                         type="password" 
+                         name="password" 
+                         [(ngModel)]="usuario.usucontrasena"
+                         minlength="4"
+                         required
+                         placeholder="Contraseña">
+                  <span class="focus-input100"></span>
+              </div>
+              
+
+              <div class="container-login100-form-btn m-t-17">
+                  <button class="login100-form-btn" type="submit">
+                      Ingresar
+                  </button>
+              </div>
+
+          </form
+          >
+      </div>
+  </div>
+</div>
+

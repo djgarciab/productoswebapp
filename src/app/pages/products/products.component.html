@@ -1,0 +1,49 @@
+<h1>GESTIÓN DE PRODUCTOS</h1>
+<hr>
+<div class="row">
+  <div class="col text-right">
+    <button routerLink="/products"
+            class="btn btn-primary ">
+      <i class="fa fa-plus">
+        Adicionar
+      </i>
+    </button>
+  </div>
+</div>
+
+<br>
+
+<table *ngIf="!cargando && productos?.length > 0" 
+        class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Precio</th>
+      <th scope="col">Cantidad</th>
+      <th scope="col">Tipo</th>
+      <th scope="col">Tools</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr  *ngFor="let producto of productos; let i = index">
+      <th scope="row">{{i+1}}</th>      
+      <td> {{producto[1]}}</td>
+      <td> {{producto[2]}}</td>
+      <td> {{producto[3]}}</td>
+      <td> {{producto[4]}}</td>
+      <td>
+        <button class="btn btn-info mr-1">
+          <i class="fa fa-pen">Editar</i>
+        </button>
+        <button class="btn btn-danger mr-1"
+               >
+          <i class="fa fa-trash">Borrar</i>
+        </button>
+      </td>
+    </tr>
+  
+
+  
+  </tbody>
+</table>
